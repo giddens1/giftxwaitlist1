@@ -32,8 +32,6 @@ export const WaitlistForm = () => {
           title: "You're in!",
           description: "We'll keep you posted.",
           className: "bg-white border-green-200",
-          titleClassName: "text-[#10B981] animate-fade-in",
-          descriptionClassName: "text-[#10B981]/80",
         });
         setEmail("");
         setInviteCode("");
