@@ -24,7 +24,7 @@ const Index = () => {
           </p>
 
           <p className="text-lg text-giftx-navy/70 mb-12 max-w-2xl">
-            Gift-X is the marketplace to buy, sell, and swap gift cards securely. Join
+            Gift-X is the marketplace to buy, sell, and store gift cards securely. Join 
             the waitlist and be the first to know.
           </p>
 
