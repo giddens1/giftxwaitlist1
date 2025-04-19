@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 
 export const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ export const WaitlistForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.io/send/8be556ef3c247392b4318e1132e9c0fa", {
+      const response = await fetch("https://formsubmit.co/giddens1@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +31,6 @@ export const WaitlistForm = () => {
         toast({
           title: "You're in!",
           description: "We'll keep you posted.",
-          className: "bg-white border-green-200",
         });
         setEmail("");
         setInviteCode("");
