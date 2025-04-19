@@ -1,6 +1,5 @@
 
 import { WaitlistForm } from "@/components/WaitlistForm";
-import { QRCode } from "@/components/QRCode";
 
 const Index = () => {
   return (
@@ -31,8 +30,6 @@ const Index = () => {
           <WaitlistForm />
         </div>
       </div>
-
-      <QRCode />
 
       <footer className="text-center py-8 text-giftx-navy/60 text-sm">
         © 2025 Gift-X Inc. All rights reserved.
