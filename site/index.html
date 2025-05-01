@@ -3,43 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join the Waitlist</title>
+  <title>Gift-X Waitlist</title>
   <style>
-    body { font-family: sans-serif; padding: 2rem; max-width: 400px; margin: auto; }
-    input, button { width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 8px; }
-    button { background-color: #6b46c1; color: white; font-weight: bold; cursor: pointer; }
-    button:hover { background-color: #553c9a; }
-    .hidden { display: none; }
+    :root {
+      --giftx-purple: #6b46c1;
+      --giftx-teal: #38b2ac;
+      --giftx-navy: #2a4365;
+      --giftx-gray: #f7fafc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--giftx-gray);
+      color: var(--giftx-navy);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    img.logo {
+      width: 12rem;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span {
+      color: var(--giftx-purple);
+    }
+
+    p.description {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: rgba(42, 67, 101, 0.8);
+    }
+
+    p.sub {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      color: rgba(42, 67, 101, 0.7);
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+      padding: 0.75rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .toggle-invite {
+      font-size: 0.875rem;
+      color: var(--giftx-purple);
+      cursor: pointer;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 0;
+    }
+
+    .toggle-invite:hover {
+      color: var(--giftx-teal);
+    }
+
+    button[type="submit"] {
+      padding: 0.75rem 1rem;
+      background-color: var(--giftx-purple);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #5b3db2;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.875rem;
+      color: rgba(42, 67, 101, 0.6);
+    }
   </style>
 </head>
 <body>
 
-  <h1>Join the Waitlist</h1>
+  <div class="container">
+    <img src="/lovable-uploads/50eb66d7-d6b3-4d04-972c-b4093314f991.png" alt="Gift-X Logo" class="logo" />
 
-  <form action="https://formsubmit.co/giddens1@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="New Gift-X Waitlist Signup!" />
-    <input type="hidden" name="_captcha" value="false" />
+    <h1>
+      Make space in your wallet for what <span>YOU</span> really <span>WANT</span>.
+    </h1>
 
-    <label>
-      <input type="email" name="email" placeholder="Enter your email" required />
-    </label>
+    <p class="description">
+      Dig out your unused gift cards… you're going to love what's coming soon.
+    </p>
 
-    <button type="button" onclick="toggleInvite()">Have an invite code?</button>
+    <p class="sub">
+      Gift-X is the marketplace to buy, sell, and store gift cards securely. Join the waitlist and be the first to know.
+    </p>
 
-    <label id="invite-container" class="hidden">
-      <input type="text" name="inviteCode" placeholder="Enter invite code" />
-    </label>
+    <form action="https://formsubmit.co/giddens1@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Gift-X Waitlist Signup!" />
+      <input type="hidden" name="_captcha" value="false" />
 
-    <button type="submit">Join Waitlist</button>
-    <p style="font-size: 0.9rem; color: gray;">No spam. No noise. Just your invite when the time is right.</p>
-  </form>
+      <input type="email" name="email" placeholder="Enter your email address" required />
+
+      <button type="button" class="toggle-invite" onclick="toggleInvite()">Have an invite code?</button>
+
+      <input type="text" name="inviteCode" placeholder="Enter your invite code" id="invite-code" class="hidden" />
+
+      <button type="submit">Join Waitlist</button>
+    </form>
+
+    <p class="sub">
+      No spam. No noise. Just your invite when the time is right.
+    </p>
+  </div>
+
+  <footer>
+    © 2025 Gift-X Inc. All rights reserved.
+  </footer>
 
   <script>
     function toggleInvite() {
-      const el = document.getElementById('invite-container');
-      el.classList.toggle('hidden');
+      const input = document.getElementById('invite-code');
+      input.classList.toggle('hidden');
     }
   </script>
-
 </body>
 </html>
