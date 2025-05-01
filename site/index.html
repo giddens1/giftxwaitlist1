@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join the Waitlist</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 400px; margin: auto; }
+    input, button { width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 8px; }
+    button { background-color: #6b46c1; color: white; font-weight: bold; cursor: pointer; }
+    button:hover { background-color: #553c9a; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>Join the Waitlist</h1>
+
+  <form action="https://formsubmit.co/giddens1@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New Gift-X Waitlist Signup!" />
+    <input type="hidden" name="_captcha" value="false" />
+
+    <label>
+      <input type="email" name="email" placeholder="Enter your email" required />
+    </label>
+
+    <button type="button" onclick="toggleInvite()">Have an invite code?</button>
+
+    <label id="invite-container" class="hidden">
+      <input type="text" name="inviteCode" placeholder="Enter invite code" />
+    </label>
+
+    <button type="submit">Join Waitlist</button>
+    <p style="font-size: 0.9rem; color: gray;">No spam. No noise. Just your invite when the time is right.</p>
+  </form>
+
+  <script>
+    function toggleInvite() {
+      const el = document.getElementById('invite-container');
+      el.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>
